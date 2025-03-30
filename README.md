@@ -16,22 +16,45 @@
 ```dart
 import 'package:flutter/material.dart';
 
+// تعریف تم روشن (Light Theme)  
 ThemeData lightTheme = ThemeData(
-  useMaterial3: true,
-  brightness: Brightness.light,
-  colorScheme: ColorScheme.fromSeed(
-    seedColor: Colors.blue,
-    brightness: Brightness.light,
+  useMaterial3: true, // فعال‌سازی Material 3 برای داشتن طراحی مدرن و رنگ‌های هماهنگ‌تر
+  brightness: Brightness.light, // تعیین روشن بودن تم (برای تم روشن)
+  colorScheme: ColorScheme.fromSeed( // استفاده از SeedColor برای ایجاد پالت رنگی خودکار
+    seedColor: Colors.blue, // رنگ اصلی که بقیه رنگ‌ها از آن مشتق می‌شوند
+    brightness: Brightness.light, // تعیین روشن بودن پالت رنگ‌ها
   ),
-  textTheme: TextTheme(
-    headlineLarge: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.black),
-    bodyLarge: TextStyle(fontSize: 16, color: Colors.black),
-    bodyMedium: TextStyle(fontSize: 14, color: Colors.grey[800]),
+  textTheme: TextTheme( // تنظیمات مربوط به فونت‌ها و استایل‌های متنی
+    headlineLarge: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.black), // تنظیم تیتر بزرگ
+    bodyLarge: TextStyle(fontSize: 16, color: Colors.black), // تنظیم متن معمولی
+    bodyMedium: TextStyle(fontSize: 14, color: Colors.grey[800]), // تنظیم متن با اندازه کوچک‌تر
   ),
-  appBarTheme: AppBarTheme(
-    backgroundColor: Colors.blue.shade700,
-    foregroundColor: Colors.white,
-    elevation: 4,
+  appBarTheme: AppBarTheme( // تنظیمات نوار بالای اپلیکیشن (AppBar)
+    backgroundColor: Colors.blue.shade700, // رنگ پس‌زمینه نوار بالا
+    foregroundColor: Colors.white, // رنگ متن نوار بالا
+    elevation: 4, // ارتفاع نوار بالا
+  ),
+  elevatedButtonTheme: ElevatedButtonThemeData( // تنظیمات دکمه‌های مرتفع (ElevatedButton)
+    style: ElevatedButton.styleFrom(
+      backgroundColor: Colors.blue, // رنگ پس‌زمینه دکمه
+      foregroundColor: Colors.white, // رنگ متن دکمه
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)), // شکل دکمه
+      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12), // تنظیمات فاصله‌های دکمه
+    ),
+  ),
+  inputDecorationTheme: InputDecorationTheme( // تنظیمات ورودی‌ها (مثل TextField)
+    filled: true, // پر کردن پس‌زمینه ورودی
+    fillColor: Colors.grey[200], // رنگ پس‌زمینه ورودی‌ها
+    border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)), // تنظیمات حاشیه ورودی‌ها
+    focusedBorder: OutlineInputBorder( // تنظیمات حاشیه زمانی که ورودی فوکوس دارد
+      borderSide: BorderSide(color: Colors.blue, width: 2), // رنگ و عرض حاشیه فوکوس
+      borderRadius: BorderRadius.circular(12),
+    ),
+  ),
+  cardTheme: CardTheme( // تنظیمات کارت‌ها (Card)
+    color: Colors.white, // رنگ پس‌زمینه کارت‌ها
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)), // تنظیمات گوشه‌های کارت
+    elevation: 4, // ارتفاع کارت
   ),
 );
 ```
