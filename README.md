@@ -61,22 +61,44 @@ ThemeData lightTheme = ThemeData(
 
 ### 🌑 تم تاریک (Dark Theme)
 ```dart
+// تعریف تم تاریک (Dark Theme)  
 ThemeData darkTheme = ThemeData(
-  useMaterial3: true,
-  brightness: Brightness.dark,
-  colorScheme: ColorScheme.fromSeed(
-    seedColor: Colors.blue,
-    brightness: Brightness.dark,
+  useMaterial3: true, // فعال‌سازی Material 3 برای تم تاریک
+  brightness: Brightness.dark, // تعیین تاریک بودن تم (برای تم تاریک)
+  colorScheme: ColorScheme.fromSeed( // استفاده از SeedColor برای پالت رنگی خودکار در تم تاریک
+    seedColor: Colors.blue, // رنگ اصلی برای تولید رنگ‌های خودکار
+    brightness: Brightness.dark, // تعیین تاریک بودن پالت رنگ‌ها
   ),
-  textTheme: TextTheme(
-    headlineLarge: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
-    bodyLarge: TextStyle(fontSize: 16, color: Colors.white),
-    bodyMedium: TextStyle(fontSize: 14, color: Colors.grey[400]),
+  textTheme: TextTheme( // تنظیمات فونت‌ها و استایل‌های متنی برای تم تاریک
+    headlineLarge: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white), // تیتر بزرگ با رنگ سفید
+    bodyLarge: TextStyle(fontSize: 16, color: Colors.white), // متن معمولی با رنگ سفید
+    bodyMedium: TextStyle(fontSize: 14, color: Colors.grey[400]), // متن کوچک با رنگ خاکی روشن
   ),
-  appBarTheme: AppBarTheme(
-    backgroundColor: Colors.grey[900],
-    foregroundColor: Colors.white,
-    elevation: 0,
+  appBarTheme: AppBarTheme( // تنظیمات نوار بالای اپلیکیشن در تم تاریک
+    backgroundColor: Colors.grey[900], // رنگ پس‌زمینه نوار بالا در تم تاریک
+    foregroundColor: Colors.white, // رنگ متن نوار بالا در تم تاریک
+    elevation: 0, // ارتفاع نوار بالا در تم تاریک
+  ),
+  elevatedButtonTheme: ElevatedButtonThemeData( // تنظیمات دکمه‌های مرتفع برای تم تاریک
+    style: ElevatedButton.styleFrom(
+      backgroundColor: Colors.blue.shade300, // رنگ پس‌زمینه دکمه
+      foregroundColor: Colors.black, // رنگ متن دکمه
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)), // شکل دکمه
+    ),
+  ),
+  inputDecorationTheme: InputDecorationTheme( // تنظیمات ورودی‌ها (مثل TextField) در تم تاریک
+    filled: true, // پر کردن پس‌زمینه ورودی
+    fillColor: Colors.grey[800], // رنگ پس‌زمینه ورودی‌ها در تم تاریک
+    border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)), // حاشیه ورودی‌ها
+    focusedBorder: OutlineInputBorder( // حاشیه ورودی‌ها زمانی که فوکوس دارند
+      borderSide: BorderSide(color: Colors.blue, width: 2), // رنگ و عرض حاشیه فوکوس
+      borderRadius: BorderRadius.circular(12),
+    ),
+  ),
+  cardTheme: CardTheme( // تنظیمات کارت‌ها در تم تاریک
+    color: Colors.grey[850], // رنگ پس‌زمینه کارت‌ها در تم تاریک
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)), // گوشه‌های کارت
+    elevation: 4, // ارتفاع کارت‌ها
   ),
 );
 ```
